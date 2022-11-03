@@ -1,25 +1,46 @@
-.reader-content { padding: 10px 0; }
-.reader-author-classics { margin-top: 20px; }
-.reader-furigana-span { transform: translateY(-16%); }
-.reader-furigana-span-stretch { line-height: .7em; }
-.reader-paragraph { margin-top: 0; }
-
-.reader-text {
-    height: 64vh;
-    display: flex;
-    writing-mode: sideways-rl;
-    overflow: auto hidden;
-    padding: 4px;
-
-    /* Put slashes and asterisks around stuff to  */
-    /* disable it. Alternatively, just delete it. */
-    /* border: solid 1px darkred; */
-    box-shadow: inset 2px 0 14px #111;
-    border: solid 1px #101010;
+:root {
+  color-scheme: dark;
 }
 
-.reader-sentence {
-    writing-mode: vertical-rl;
-    line-height: 1.6em;
-    padding: 0 10px;
+.reader-text {
+  /* Horizontal scrolling */
+  width: 100%;
+  overflow: auto hidden;
+  
+  /* Spacing between text and scrollbar */
+  padding-bottom: 1em;
+  
+  /* Put scrollbar on top */
+  /* Text becomes upside down */
+  transform: rotate(180deg);
+}
+
+.reader-text > div {
+  /* Height of the reading area */
+  height: 512px;
+  
+  /* Vertical text */
+  writing-mode: vertical-rl;
+  
+  /* Text is upside down, so flip it back */
+  transform: rotate(180deg);
+}
+
+.reader-paragraph-spacing {
+  /* Spacing between paragraphs */
+  width: .8em;
+}
+
+.reader-text * {
+  /* Spacing between individual lines within a paragraph */
+  line-height: 1.28em;
+}
+
+.reader-paragraph {
+  margin-top: 0;
+}
+
+/* Remove this rule to re-enable the sentence insets */
+.reader-span-fragment {
+  display: none;
 }
