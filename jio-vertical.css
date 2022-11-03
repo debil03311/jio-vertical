@@ -41,6 +41,6 @@
 }
 
 /* Remove this rule to re-enable the sentence insets */
-.reader-span-fragment {
+.reader-span-fragment:first-child {
   display: none;
 }
